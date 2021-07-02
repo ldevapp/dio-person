@@ -2,7 +2,6 @@ package app.ldev.dio.person.personapi.controller;
 
 import app.ldev.dio.person.personapi.dto.request.PersonDTO;
 import app.ldev.dio.person.personapi.dto.response.MessageResponseDTO;
-import app.ldev.dio.person.personapi.entity.Person;
 import app.ldev.dio.person.personapi.exceptions.PersonalNotFoundException;
 import app.ldev.dio.person.personapi.service.PersonService;
 import lombok.AllArgsConstructor;
@@ -23,7 +22,7 @@ public class PersonController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public MessageResponseDTO createPerson(@RequestBody @Valid PersonDTO personDTO) {
-        return personService.createPerson(personDTO);
+        return personService.create(personDTO);
     }
 
     @GetMapping
