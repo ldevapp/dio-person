@@ -55,7 +55,7 @@ public class PersonService {
 
         Person personToUpdate = personMapper.toModel(personDTO);
 
-        Person updatePerson = personRepository.update(personToUpdate);
+        Person updatePerson = personRepository.save(personToUpdate);
         return createMessageResponse(updatePerson.getId(), "Update person with ID ");
     }
 
